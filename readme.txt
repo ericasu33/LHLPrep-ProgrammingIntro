@@ -1,1 +1,1 @@
-Light House Lab Web Dev Bootcamp PrepCourse Assignemnts & Activities
+Lighthouse Lab Web Dev Bootcamp PrepCourse Assignemnts & Activities
