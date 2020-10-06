@@ -17,6 +17,7 @@ const urlEncode = (str) => {
 }
 
 //replace spacing with %20
+//only replace spacing within the string, not including before or after
 //without using .trim()
 
 const urlEncode = (str) => {
