@@ -3,7 +3,7 @@
 
 const sumLargestNums = (numArr) => {
   if (numArr.length <= 1) return "Please input two or more numbers";
-  const largestNum = [0,0];
+  const largestNum = [-Infinity,-Infinity];
 
   for (let i = 0; i < numArr.length; i++){
       //console.log((numArr[i]));
@@ -19,11 +19,14 @@ const sumLargestNums = (numArr) => {
   return `The 2 largest numbers are: ${largestNum} and the sum is: ${sum}`;
 }
 
-console.log(sumLargestNums([10, 6, 20, 20])); //40
+console.log(sumLargestNums([10, 6, 20])); //40
 console.log(sumLargestNums([1, 10])); //11
 console.log(sumLargestNums([1, 2, 3])); //5
+console.log(sumLargestNums([1.5, 2.3, 3])); //5
 console.log(sumLargestNums([10, 4, 34, 6, 92, 2])); //126
 console.log(sumLargestNums([]));
+console.log(sumLargestNums([-100,-20,-3.5,10]));
+console.log(sumLargestNums([-100, Math.log(0)]));
 
 // const sumLargestNums = (numArr) => {
 //   if (numArr.length <= 1) return "Please input two or more numbers";
