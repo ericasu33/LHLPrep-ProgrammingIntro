@@ -1,40 +1,41 @@
 //2 param: string, casting style(can be in arr)
 //return string in given casting style
 
-const priority = style => {
-  const styleOrder = [
-    {name: "camel", index: 0},
-    {name: "pascal", index: 1},
-    {name: "snake", index: 2},
-    {name: "kebab", index: 3},
-    {name: "title", index: 4},
-    {name: "vowel", index: 5},
-    {name: "consonant", index: 6},
-    {name: "upper", index: 7},
-    {name: "lower", index: 8}
-  ]
-
-  const sortArr = [];
-
-  for (let i = 0; i < style.length; i++){
-    for (let j = 0; j < styleOrder.length; j++){
-      if (style[i] === styleOrder[j].name){
-        sortArr.push([style[i], styleOrder[j].index]);
-        }
-      }
-    }
-
-  sortArr.sort(function(a, b) {
-    return a[1] - b[1];
-  })
-
-  style = [];
-
-  for (let i = 0; i < sortArr.length; i++){
-    style.push(sortArr[i][0]);
+// const priority = style => {
+  const styleOrder = {
+    "camel": 0,
+    "pascal": 1,
+    "snake": 2,
+    "kebab": 3,
+    "title": 4,
+    "vowel": 5,
+    "consonant": 6,
+    "upper": 7,
+    "lower": 8
   }
-  return style;
-}
+// }
+
+  // const sortArr = [];
+
+  // for (let i = 0; i < style.length; i++){
+  //   for (let j = 0; j < styleOrder.length; j++){
+  //     if (style[i] === styleOrder[j].name){
+  //       sortArr.push([style[i], styleOrder[j].index]);
+  //       }
+  //     }
+  //   }
+
+  // sortArr.sort(function(a, b) {
+  //   return a[1] - b[1];
+  // })
+
+//   style = [];
+
+//   for (let i = 0; i < sortArr.length; i++){
+//     style.push(sortArr[i][0]);
+//   }
+//   return style;
+// }
 
 const makeCase = (input, style) => {
   let output = "";
@@ -46,8 +47,16 @@ const makeCase = (input, style) => {
       style = style.split();
     }
   
-  priority(style);
-  
+  style.sort((a, b) => {
+    // const valueOfA = styleOrder[a];
+    // const valueOfB = styleOrder[b];
+
+    // console.log(`Value of ${a}: ${valueOfA}`);
+    // console.log(`Value of ${b}: ${valueOfB}`);
+    styleOrder[a] - styleOrder[b]
+  });
+  //styleOrder[a] & [b] is used to lookup the --value-- from the object so you could sort by that value
+
   for (let i = 0; i < style.length; i++){
     output = ""; //clean out the existing output so we can update the 2nd round below
     for (let j = 0; j < input.length; j++){
