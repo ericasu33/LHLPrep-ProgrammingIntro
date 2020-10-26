@@ -5,10 +5,10 @@
 //return if two queens are a threa to each other
 
 const generateBoard = (whiteQ, blackQ) => {
-  let board = [];
+  const board = [];
 
   for (let i = 0; i < 8; i++){
-    let arr = [];
+    const arr = [];
     for (let j = 0; j < 8; j++){
       arr.push(0);
     }
@@ -24,7 +24,7 @@ const generateBoard = (whiteQ, blackQ) => {
 }
 
 const queenThreat = generatedBoard => {
-  let index = []
+  const index = []
   let diagonal1 = 0;
   let diagonal2 = 0;
 
