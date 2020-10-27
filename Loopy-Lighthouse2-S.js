@@ -5,11 +5,13 @@
 
 const loopyLighthouse = (range, multiples, words) => {
   for (let i = range[0]; i <= range[1]; i++) {
-    if (i % multiples[0] === 0 && i % multiples[1] === 0) {
+    const m1 = i % multiples[0] === 0 ;
+    const m2 = i % multiples[1] === 0 
+    if (m1 && m2) {
       console.log(words.join(""));
-    } else if (i % multiples[0] === 0) {
+    } else if (m1) {
       console.log(words[0]);
-    } else if (i % multiples[1] === 0) {
+    } else if (m2) {
       console.log(words[1]);
     } else {
       console.log(i);
