@@ -14,8 +14,8 @@ const loopyLighthouse = (range, multiples, words) => {
     } else {
       console.log(i);
     }
-  } 
-}
+  }
+};
 
 loopyLighthouse([10, 100], [2, 5], ["Happy", "Money"]);
 loopyLighthouse([15, 90], [2, 5], ["Batty", "Beacon"]);
