@@ -29,7 +29,7 @@ const loopyLighthouse = (range, multiples, words) => {
     if (i % multiples[1] === 0) {
       output += words[1];
     }
-    console.log(output === "" ? i : output);
+    console.log(output || i); //if value of output is truthy, prints output. otherwise print what is on the right side of ||
   }
 };
 
